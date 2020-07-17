@@ -1,0 +1,5 @@
+/home/danish/Opencv_codes/Lab_project/Object_detection/CppMT-master/CMakeFiles/edit_cache.dir
+/home/danish/Opencv_codes/Lab_project/Object_detection/CppMT-master/CMakeFiles/cmt.dir
+/home/danish/Opencv_codes/Lab_project/Object_detection/CppMT-master/CMakeFiles/rebuild_cache.dir
+/home/danish/Opencv_codes/Lab_project/Object_detection/CppMT-master/CMakeFiles/kcf.dir
+/home/danish/Opencv_codes/Lab_project/Object_detection/CppMT-master/CMakeFiles/surf.dir

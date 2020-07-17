@@ -1,0 +1,51 @@
+while (true){
+            cout << "Inside while loop...." << endl;
+            int minHessian = 400;
+            Ptr<SURF> detector = SURF::create( minHessian );
+            std::vector<KeyPoint> keypoints;
+            detector->detect( im0, keypoints );
+            Mat img_keypoints;
+            drawKeypoints( im0, keypoints, img_keypoints );
+            for (k=0; k<= sizeof(keypoints); k++){
+                if (keypoints[k].size>m){
+                    cout << "Finding largest keypoints...." << endl;
+                    m = keypoints[k].size;
+                    ind = k;
+                    x_tl = keypoints[ind].pt.x - (keypoints[ind].size/2);
+                    //x_tl = 700;
+                    y_tl = keypoints[ind].pt.y - (keypoints[ind].size/2);
+                    //y_tl = 300;
+                    width = keypoints[ind].size;
+                    //width = 300;
+                    height = keypoints[ind].size;
+                    //height = 500;
+                }
+            }
+            waitKey();
+        }
+
+
+Rect getRect(const Mat im, const string win_name)
+{
+
+    win_name_ = win_name;
+    im_select = im;
+    tl_set = false;
+    br_set = false;
+
+    setMouseCallback(win_name, onMouse);
+
+    //Dummy call to get drawing right
+    onMouse(0,0,0,0,0);
+
+    while(!br_set)
+    {
+        cvWaitKey(10);
+    }
+
+    setMouseCallback(win_name, NULL);
+
+    im_select.release(); //im_select is in global scope, so we call release manually
+
+    return Rect(tl,br);
+}
